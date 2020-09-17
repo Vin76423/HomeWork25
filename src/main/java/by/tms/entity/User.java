@@ -3,7 +3,7 @@ package by.tms.entity;
 public class User {
     public static int incId = 1;
 
-    private int id = incId++;
+    private long id;
     private String name;
     private String login;
     private String password;
@@ -12,8 +12,19 @@ public class User {
         this.name = name;
         this.login = login;
         this.password = password;
-        id++;
+        id = incId++;
     }
+
+    public User(long id, String name, String login, String password) {
+        this.id = id;
+        this.name = name;
+        this.login = login;
+        this.password = password;
+    }
+
+    public long getId() { return id; }
+
+    public void setId(long id) { this.id = id; }
 
     public String getName() {
         return name;
@@ -37,5 +48,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

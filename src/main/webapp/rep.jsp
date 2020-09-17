@@ -15,9 +15,9 @@
     </head>
     <body>
         <table>
-            <c:forEach items="${sessionScope.report}" var="operation">
+            <c:forEach items="${requestScope.report}" var="operation">
                 <tr>
-                    <td><div>operation_id = ${operation.operationId}</div></td>
+                    <td><div>date = ${operation.date}</div></td>
                     <td><div>num_1 = ${operation.num1}</div></td>
                     <td><div>num_2 = ${operation.num2}</div></td>
                     <td><div>operation_type = ${operation.type}</div></td>

@@ -14,7 +14,7 @@
     </head>
     <body>
         <form action="/calc" method="post">
-            <input type="text" name="num1" placeholder="num1">
+            <input type="text" name="num1" placeholder="num1" maxlength="5" minlength="1" required>
             <input type="text" name="num2" placeholder="num2">
             <input type="text" name="type" placeholder="type">
             <input type="submit" placeholder="submit">

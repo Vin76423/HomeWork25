@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "calcFilter", urlPatterns = "/calc")
-public class CalcFilter extends HttpFilter {
+@WebFilter(filterName = "sessionFilter", urlPatterns = {"/calc", "/account", "/updateAccount"})
+public class SessionFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         if (req.getSession().getAttribute("user") == null){

@@ -13,14 +13,15 @@
     <title>home_page</title>
 </head>
 <body>
-Hello ${sessionScope.user.name}
+Hello ${sessionScope.user.login}
 
 <div>
     <c:if test="${sessionScope.user != null}">
+        <a href="/account">UserAccount</a>
         <a href="/calc">Calc</a>
     </c:if>
 
-    <c:if test="${sessionScope.report != null && sessionScope.report.size() != 0}">
+    <c:if test="${requestScope.reportFlag}">
         <a href="/rep">Report</a>
     </c:if>
 

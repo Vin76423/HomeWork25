@@ -1,30 +1,46 @@
 package by.tms.entity;
 
-public class UsersOperation {
-    public static int counter = 1;
+import java.sql.Date;
 
-    private int operationId = counter++;
+
+public class UsersOperation {
+    private long userId;
+    private Date date = new Date(new java.util.Date().getTime());
     private String num1;
     private String num2;
     private String type;
     private String result;
 
-    public UsersOperation(String num1, String num2, String type, String result) {
+    public UsersOperation(Date date, String num1, String num2, String type, String result) {
+        this.date = date;
         this.num1 = num1;
         this.num2 = num2;
         this.type = type;
         this.result = result;
     }
 
-    public UsersOperation() {
+    public UsersOperation(long userId, String num1, String num2, String type, String result) {
+        this.userId = userId;
+        this.num1 = num1;
+        this.num2 = num2;
+        this.type = type;
+        this.result = result;
     }
 
-    public int getOperationId() {
-        return operationId;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setOperationId(int operationId) {
-        this.operationId = operationId;
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getNum1() {
@@ -57,15 +73,5 @@ public class UsersOperation {
 
     public void setResult(String result) {
         this.result = result;
-    }
-
-    @Override
-    public String toString() {
-        return "UsersOperation{" +
-                "operationId=" + operationId +
-                ", num1='" + num1 + '\'' +
-                ", num2='" + num2 + '\'' +
-                ", type='" + type + '\'' +
-                '}';
     }
 }
